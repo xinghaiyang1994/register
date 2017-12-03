@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*清除默认样式*/
+*{margin:0; padding:0;}
+img{vertical-align:top;border:none;}
+a{text-decoration:none;color:#000;}
+li{list-style:none;}
+html{-webkit-tap-highlight-color: transparent;}
+
+body{font:16px 'Microsoft yahei';}
+em,i{font-style:normal;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+/*清除表单默认样式*/
+table {border-collapse:collapse;border-spacing:0;}
+th{font-weight:normal;}
+input,textarea,button{border:none; background:none;outline:none;}
+select{outline:none;}
+textarea{resize:none;}
+input[type="button"],input[type="text"],input[type="submit"],input[type="search"],input[type="tel"],input[type="number"],select,option,{appearance:none;-webkit-appearance:none;-moz-appearance:none;}
+
+/*常用*/
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{zoom: 1;}
+.clearfix:after{content:'';display:block;clear:both;}
+.wrap-b{width:100%;min-width:1200px;overflow:hidden;}
+.wrap{width:1200px;margin:0 auto;}
+.all-w{width:100%}
+.all-w{width:100%}
+.all-whb{width:100%;display:block;height: 100%;}
+.all-wb{width:100%;display:block;}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <div class="wrap-b">
+        <div class="wrap">
+            <div class="mod">
+                <div class="mod-top clearfix">
+                    <div class="mod-top-left fl clearfix">
+                        <em class="mod-tl-ls mod-tl-ls-red fl"></em>
+                        <em class="mod-tl-ls mod-tl-ls-yellow fl"></em>
+                        <em class="mod-tl-ls mod-tl-ls-green fl"></em>
+                    </div>
+                    <i class="icon icon-close fr"></i>
+                </div>
+                <div class="job-b">
+                    <div class="job">
+                        <i class="icon icon-job-close"></i>
+                        <h3 class="job-title">我从事的职业</h3>
+                        <div class="job-main">
+                            <ul class="job-main-son clearfix">
+                                    <li class="job-ls job-ls-checked fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job1.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">旅行攻略</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                                    <li class="job-ls job-ls-checked fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job2.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">名人明星</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                                    <li class="job-ls job-ls-checked fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job3.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">建筑设计</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                                    <li class="job-ls fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job4.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">园艺设计</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                                    <li class="job-ls job-ls-checked fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job5.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">美食鉴赏与品位</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                                    <li class="job-ls fl">
+                                        <div class="job-ls-imgwrap">
+                                            <img src="./img/demo-job6.jpg" class="all-wb" alt="">
+                                        </div>
+                                        <div class="job-ls-bottom clearfix">
+                                            <div class="job-lb-title fl">手工布艺</div>
+                                            <i class="icon icon-job-checked fr"></i>
+                                        </div>
+                                        <div class="job-ls-border"></div>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="job-bottom">
+                            <div class="job-bottom-top">3/5 已选择3个职业</div>
+                            <div class="job-bottom-bottom">名人明星/ 建筑设计 / 手工布艺</div>
+                        </div>
+                    </div>
+                    <div class="job-nav clearfix">
+                        <div class="job-nav-left fl">
+                            <div class="job-nl-2">
+                                <div class="job-nl-3">
+                                    <div class="job-nl-4">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-nav-right fr clearfix">
+                            <span class="fl job-nav-cancel">取消</span>
+                            <span class="fl job-nav-next">下一步</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        $(function(){
+            /*事业*/
+            function checkJob(){
+                var allJob=$('.job-main-son').children().length;
+                var checkedJob=$('.job-main-son').children('.job-ls-checked').length;
+                var aCJob=[];
+                $('.job-main-son').children().each(function(index,el){
+                    if($(el).hasClass('job-ls-checked')){
+                        aCJob.push($(el).find('.job-lb-title').html());
+                    }
+                });
+                $('.job-bottom-top').html(checkedJob+'/'+allJob+' 已选择'+checkedJob+'个职业')
+                $('.job-bottom-bottom').html(aCJob.join('/'));
+                $('.job-nl-4').html(checkedJob);
+            }
+            checkJob();
+            $('.job-ls').on('click',function(){
+                if($(this).hasClass('job-ls-checked')){
+                    $(this).removeClass('job-ls-checked');
+                }else{
+                    $(this).addClass('job-ls-checked');
+                }
+                checkJob();
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

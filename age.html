@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <div class="wrap-b">
+        <div class="wrap">
+            <div class="age-b">
+                <div class="age">
+                    <div class="age-title">从业年限</div>
+                    <div class="age-main">
+                        <div class="age-body">
+                            <div class="age-son">
+                                <em class="age-son-center"></em>
+                                <em class="age-son-link"></em>
+                                <span class="age-son-num">约1年</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="age-bottom clearfix">
+                        <span class="age-bottom-cancel fl">取消</span>
+                        <span class="age-bottom-ok fr">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            /*拖拽*/
+            var sonX=parseInt($('.age-son').css('left'));
+            console.log(sonX)
+            var L=parseInt($('.age-body').css('width'));
+            $('.age-son').on('mousedown',function(e){
+
+                var disX=e.clientX-sonX;
+                
+                function fnMove(e){
+                    sonX=e.clientX-disX;
+                    if(sonX < 0){
+                        sonX = 0;
+                    }else if(sonX > L){
+                        sonX = L;
+                    }
+                    var scale=sonX / L;
+
+                    $('.age-son').css('left',sonX);
+                    if(scale == 1){
+                        $('.age-son-num').html(parseInt((scale*10))+'年+');
+                    }else{
+                        $('.age-son-num').html('约'+parseInt((scale*10))+'年');
+                    }
+                }
+
+                function fnUp(){
+                    $(document).off('mousemove',fnMove);
+                    $(document).off('mouseUp',fnUp);
+                }
+
+                $(document).on('mousemove',fnMove);
+                $(document).on('mouseup',fnUp);
+
+            });
+        });
+    </script>
+</body>
+</html>

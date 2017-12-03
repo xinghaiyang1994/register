@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <div class="wrap-b">
+        <div class="wrap">
+            <div class="mod">
+                <div class="mod-top clearfix">
+                    <div class="mod-top-left fl clearfix">
+                        <em class="mod-tl-ls mod-tl-ls-red fl"></em>
+                        <em class="mod-tl-ls mod-tl-ls-yellow fl"></em>
+                        <em class="mod-tl-ls mod-tl-ls-green fl"></em>
+                    </div>
+                    <i class="icon icon-close fr"></i>
+                </div>
+                <div class="master">
+                    <h2 class="master-title">我的最高学历</h2>
+                    <ul class="master-main">
+                        <li class="master-ls master-ls-1 master-ls-cur">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                    统招985<br />
+                                    211院校
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-2">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                        统招一本
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-3">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                        统招二本<br />
+                                        院校
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-4">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                    统招普通<br />
+                                    院校
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-5">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                        统招大专
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-6">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                        成人高考
+                                </span>
+                            </div>
+                        </li>
+                        <li class="master-ls master-ls-7">
+                            <div class="master-list">
+                                <span class="master-ls-txt">
+                                        成人大专
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="master-bottom">
+                        <div class="master-bottom-info">点击气泡选择最高学历</div>
+                        <div class="master-bottom-nav">
+                            <i class="icon icon-master-prev"></i>
+                            <div class="master-bottom-haschoose">最高学历：统招985 211院校</div>
+                            <i class="icon icon-master-next"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            /*学历*/
+            $('.master-ls').on('click',function(){
+                $(this).addClass('master-ls-cur').siblings().removeClass('master-ls-cur');
+                var str=$(this).find('.master-ls-txt').html();
+                str=$.trim(str).replace(/\s+/,'').replace('<br>',' ');
+                $('.master-bottom-haschoose').html('最高学历：'+str);
+            });            
+        });
+    </script>
+</body>
+</html>

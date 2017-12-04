@@ -18,6 +18,71 @@
                 <i class="icon icon-close fr"></i>
             </div>
             <div class="mod-main">
+
+
+
+
+                <div class="mod-ls student-b">
+                    <div class="center">
+                        <h2 class="title">同学你叫什么名字？</h2>
+                        <p class="title">请填写与准考证一致的姓名，用于院校联络你</p>
+                        <img src="" alt="" class="title image">
+                        <div class="input">
+                            <input type="text" value="呆呆同学">
+                            <span class="logo"></span>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="right page-next"><a href="javascript:;">下一步</a></div>
+                    </div>
+                </div>
+
+                <div class="mod-ls nage">                     
+                    <div class="center">
+                        <h2 class="title">我的基本信息</h2>
+                        <p class="title">请选择一个头像</p>
+                        <div class="title logo">
+                            <div class="logo-one">
+                                <div class="logo-top">
+                                    <div class="logo-top-left-one"></div>
+                                    <div class="logo-top-right-one"></div>
+                                </div>
+                                <div class="logo-one-sex">
+                                    <span>男生</span>
+                                    <span>女生</span>
+                                </div>
+                                <div class="logo-footer logo-footer-one">20-26岁</div>
+                            </div>
+                            <div class="logo-one">
+                                <div class="logo-top">
+                                    <div class="logo-top-left-two"></div>
+                                    <div class="logo-top-right-two"></div>
+                                </div>
+                                <div class="logo-two-sex">
+                                    <span>男生</span>
+                                    <span>女生</span>
+                                </div>
+                                <div class="logo-footer logo-footer-two">27-35岁</div>
+                            </div>
+                            <div class="logo-one">
+                                <div class="logo-top">
+                                    <div class="logo-top-left-three"></div>
+                                    <div class="logo-top-right-three"></div>
+                                </div>
+                                <div class="logo-three-sex">
+                                    <span>男生</span>
+                                    <span>女生</span>
+                                </div>
+                                <div class="logo-footer logo-footer-three">35岁以上</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="left page-prev"><a href="javascript:;">上一步</a></div>
+                        <div class="right page-next"><a href="javascript:;">下一步</a></div>
+                    </div>
+                </div>	
+
                 <div class="mod-ls in-wrap">
                     <div class="in">
                         <h2 class="in-title">准考证号</h2>
@@ -250,6 +315,27 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mod-ls phone-b">
+                    <div class="phone-ls clearfix">
+                        <label for="" class="phone-txt fl">手机号</label>
+                        <input type="text" class="phone-inp fl">
+                    </div>
+                    <div class="phone-ls clearfix">
+                        <label for="" class="phone-txt fl">验证码</label>
+                        <input type="text" class="phone-inp fl">
+                        <button type="button" class="phone-confirm">获取验证码</button>
+                    </div>
+                    <div class="phone-ls clearfix">
+                        <label for="" class="phone-txt fl">密码</label>
+                        <input type="password" class="phone-inp fl">
+                    </div>
+                    <div class="clearfix">
+                        <span class="phone-left master-prev page-prev fl">上一步</span>
+                        <span class="phone-right master-prev master-next page-next fr">下一步</span>
+                    </div>
+                </div>                
+
                 <div class="mod-ls complete-b">
                     <div class="complete">
                         <div class="complete-imgwrap">
@@ -274,7 +360,7 @@
     </div>    
     <script>
         $(function(){
-
+            
             $('.mod-open').on('click',function(){
                 $('.mod-bg').show();
                 jQuery(".job-slide").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:false,vis:4});
